@@ -211,7 +211,7 @@ def encode_video(frame_paths: List[str], fps: float, cfg: Config, encoder: Encod
         framebuffer = X0.copy()
         accum_frame_error = np.zeros((blocksy, blocksx))
         frame_update_masks = np.zeros(
-            (len(output_queue), X0.shape[0], X0.shape[1]), dtype=np.bool
+            (len(output_queue), X0.shape[0], X0.shape[1]), dtype=bool
         )
         # always write the first frame
         X[0:blocks_per_frame] = X0.reshape(-1, cfg.vector_size())
